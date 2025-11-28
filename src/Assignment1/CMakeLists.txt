@@ -5,11 +5,34 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+# ------------------------------------------------------------------------------
+# Dependencies
+# ------------------------------------------------------------------------------
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
+find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(turtlesim REQUIRED)
+
 # find_package(<dependency> REQUIRED)
+
+# ------------------------------------------------------------------------------
+# Executable
+# ------------------------------------------------------------------------------
+add_executable(node1 src/node1.cpp)
+
+ament_target_dependencies(node1
+  rclcpp
+  geometry_msgs
+  turtlesim
+)
+
+# ------------------------------------------------------------------------------
+# Installation
+# ------------------------------------------------------------------------------
+install(TARGETS
+  node1
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -23,4 +46,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# ------------------------------------------------------------------------------
+# Package
+# ------------------------------------------------------------------------------
 ament_package()
