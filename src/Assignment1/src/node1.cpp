@@ -1,20 +1,19 @@
-#include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/twist.hpp"
 #include <chrono>
 #include <memory>
 #include <iostream>
+#include "rclcpp/rclcpp.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 
-using namespace std::chrono_literals;
 using namespace std;
+using namespace std::chrono_literals;
 
 class TurtlesimUI : public rclcpp::Node {
 public:
     TurtlesimUI() : Node("node1") {
-        // Publisher per le due turtles
+
         pub1_ = this->create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 10);
         pub2_ = this->create_publisher<geometry_msgs::msg::Twist>("turtle2/cmd_vel", 10);
 
-        // Timer per gestire l'interazione utente
         timer_ = this->create_wall_timer(100ms, std::bind(&TurtlesimUI::user_input_loop, this));
     }
 
@@ -43,7 +42,7 @@ private:
             return;
         }
 
-        cout << "Direction? (1=right, 2=left, 3=forward, 4=backward): ";
+        cout << "Direction? (1=rotate right, 2=rotate left, 3=move forward, 4=move backward): ";
         cin >> direction;
         if (direction < 1 || direction > 4) {
             cout << "Invalid direction!\n";
@@ -64,8 +63,8 @@ private:
         geometry_msgs::msg::Twist msg;
 
         switch (direction) {
-            case 1: msg.linear.y = -speed; break; // right 
-            case 2: msg.linear.y = speed; break;  // left
+            case 1: msg.angular.z = -speed; break; // right 
+            case 2: msg.angular.z = speed; break;  // left
             case 3: msg.linear.x = speed; break;   // forward
             case 4: msg.linear.x = -speed; break;  // backward
         }
@@ -73,7 +72,6 @@ private:
         auto publisher = (turtle_choice == 1) ? pub1_ : pub2_;
         publisher->publish(msg);
 
-        // Timer per fermare la turtle dopo 1 secondo
         auto stop_timer = this->create_wall_timer(
             1s,
             [publisher, this]() {

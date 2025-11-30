@@ -1,15 +1,15 @@
+#include <cmath>
 #include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/twist.hpp"
 #include "turtlesim/msg/pose.hpp"
 #include "std_msgs/msg/float32.hpp"
-#include <cmath>
+#include "geometry_msgs/msg/twist.hpp"
 
 using namespace std::chrono_literals;
 
 class DistanceMonitor : public rclcpp::Node {
 public:
     DistanceMonitor() : Node("node2") {
-        // Subscribers per le pose delle tartarughe
+
         sub1_ = this->create_subscription<turtlesim::msg::Pose>(
             "turtle1/pose", 10, std::bind(&DistanceMonitor::pose_callback1, this, std::placeholders::_1)
         );
@@ -17,10 +17,8 @@ public:
             "turtle2/pose", 10, std::bind(&DistanceMonitor::pose_callback2, this, std::placeholders::_1)
         );
 
-        // Publisher della distanza
         dist_pub_ = this->create_publisher<std_msgs::msg::Float32>("distance", 10);
 
-        // Publisher per fermare le tartarughe
         pub1_ = this->create_publisher<geometry_msgs::msg::Twist>("turtle1/cmd_vel", 10);
         pub2_ = this->create_publisher<geometry_msgs::msg::Twist>("turtle2/cmd_vel", 10);
 
@@ -40,7 +38,7 @@ private:
     bool pose1_ready_ = false;
     bool pose2_ready_ = false;
 
-    const float distance_threshold_ = 1.0;  // distanza minima
+    const float distance_threshold_ = 1.0;  
     const float x_min_ = 1.0, x_max_ = 10.0;
     const float y_min_ = 1.0, y_max_ = 10.0;
 
@@ -57,24 +55,46 @@ private:
     void check_distance() {
         if (!pose1_ready_ || !pose2_ready_) return;
 
-        // calcola distanza euclidea
         float dx = pose1_.x - pose2_.x;
         float dy = pose1_.y - pose2_.y;
         float dist = std::sqrt(dx*dx + dy*dy);
 
-        // pubblica la distanza
         std_msgs::msg::Float32 msg;
         msg.data = dist;
         dist_pub_->publish(msg);
 
-        // controlla la soglia distanza
-        if (dist < distance_threshold_ ||
-            pose1_.x < x_min_ || pose1_.x > x_max_ || pose1_.y < y_min_ || pose1_.y > y_max_ ||
-            pose2_.x < x_min_ || pose2_.x > x_max_ || pose2_.y < y_min_ || pose2_.y > y_max_) 
-        {
+        RCLCPP_INFO(this->get_logger(), 
+            "Turtle1: (%.2f, %.2f)  |  Turtle2: (%.2f, %.2f)  | Dist: %.2f",
+            pose1_.x, pose1_.y, pose2_.x, pose2_.y, dist);
+
+            bool too_close = false;
+            bool border_alert = false;
+
+        if (dist < distance_threshold_) {
+            RCLCPP_WARN(this->get_logger(), 
+                        "Turtles too close! DISTANCE = %.2f -> STOP", dist);
+            too_close = true;
+        }
+
+        if (pose1_.x < x_min_ || pose1_.x > x_max_ ||
+            pose1_.y < y_min_ || pose1_.y > y_max_) {
+            RCLCPP_WARN(this->get_logger(),
+                        "Turtle1 near the border! (%.2f, %.2f) -> STOP", pose1_.x, pose1_.y);
+            border_alert = true;
+        }
+
+        if (pose2_.x < x_min_ || pose2_.x > x_max_ ||
+            pose2_.y < y_min_ || pose2_.y > y_max_) {
+            RCLCPP_WARN(this->get_logger(),
+                        "Turtle2 near the border! (%.2f, %.2f) -> STOP", pose2_.x, pose2_.y);
+            border_alert = true;
+        }
+
+        if (too_close || border_alert) {
             geometry_msgs::msg::Twist stop_msg;
             stop_msg.linear.x = 0.0;
             stop_msg.angular.z = 0.0;
+
             pub1_->publish(stop_msg);
             pub2_->publish(stop_msg);
         }

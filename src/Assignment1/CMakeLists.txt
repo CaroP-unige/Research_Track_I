@@ -18,7 +18,7 @@ find_package(turtlesim REQUIRED)
 # Executables
 # ------------------------------------------------------------------------------
 add_executable(node1 src/node1.cpp)
-add_executable(node2 src/node2.cpp)  # Nodo DistanceMonitor
+add_executable(node2 src/node2.cpp)  
 
 ament_target_dependencies(node1
   rclcpp
