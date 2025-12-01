@@ -7,6 +7,7 @@
 
 #include <chrono>
 #include <memory>
+#include <thread>
 #include <iostream>
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
@@ -62,6 +63,12 @@ private:
         // Selection of the turtle to control.
         cout << "\nWhich turtle do you want to move? (1=turtle1, 2=turtle2, 0=exit): ";
         cin >> turtle_choice;
+        if(cin.fail()) {        
+            cin.clear();         
+            cin.ignore(10000,'\n'); 
+            cout << "Invalid input! Please enter a number.\n";
+            return;
+        }
         if (turtle_choice == 0) {
             RCLCPP_INFO(this->get_logger(), "Exiting...");
             rclcpp::shutdown();
@@ -75,6 +82,12 @@ private:
         // Selection of the direction of movement.
         cout << "Direction? (1=rotate right, 2=rotate left, 3=move forward, 4=move backward): ";
         cin >> direction;
+        if(cin.fail()) {        
+            cin.clear();         
+            cin.ignore(10000,'\n'); 
+            cout << "Invalid input! Please enter a number.\n";
+            return;
+        }
         if (direction < 1 || direction > 4) {
             cout << "Invalid direction!\n";
             return;
@@ -83,6 +96,12 @@ private:
         // Selection of the speed.
         cout << "Speed (>0): ";
         cin >> speed;
+        if(cin.fail()) {        
+            cin.clear();         
+            cin.ignore(10000,'\n'); 
+            cout << "Invalid input! Please enter a number.\n";
+            return;
+        }
         if (speed <= 0) {
             cout << "Speed must be positive!\n";
             return;
