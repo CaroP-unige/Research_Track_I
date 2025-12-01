@@ -127,7 +127,7 @@ private:
             [publisher, this]() {
                 geometry_msgs::msg::Twist stop_msg;
                 stop_msg.linear.x = 0.0;
-                stop_msg.linear.y = 0.0;
+                stop_msg.angular.z = 0.0;
                 publisher->publish(stop_msg);
             }
         );
