@@ -1,0 +1,25 @@
+[0.044s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+[0.467s] [ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[13.315s] [100%] [32m[1mLinking CXX executable node1[0m
+[13.880s] [100%] Built target node1
+[13.897s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+[13.920s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/Desktop/Research_Track_I/build/Assignment1
+[13.936s] -- Install configuration: ""
+[13.940s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/lib/Assignment1/node1
+[13.960s] -- Set non-toolchain portion of runtime path of "/home/ubuntu/Desktop/Research_Track_I/install/Assignment1/lib/Assignment1/node1" to ""
+[13.961s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/package_run_dependencies/Assignment1
+[13.961s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/parent_prefix_path/Assignment1
+[13.961s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/ament_prefix_path.sh
+[13.962s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/ament_prefix_path.dsv
+[13.962s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/path.sh
+[13.962s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/path.dsv
+[13.963s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.bash
+[13.963s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.sh
+[13.964s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.zsh
+[13.964s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.dsv
+[13.964s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/package.dsv
+[13.966s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/packages/Assignment1
+[13.966s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/cmake/Assignment1Config.cmake
+[13.967s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/cmake/Assignment1Config-version.cmake
+[13.967s] -- Up-to-date: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/package.xml
+[13.971s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/Desktop/Research_Track_I/build/Assignment1

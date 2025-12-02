@@ -1,0 +1,17 @@
+[0.072s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+[1.053s] [ 25%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[1.080s] [ 75%] Built target node2
+[16.385s] [01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid TurtlesimUI::[01;32m[Kuser_input_loop[m[K()[m[K’:
+[16.386s] [01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:73:13:[m[K [01;31m[Kerror: [m[Kcontinue statement not within a loop
+[16.386s]    73 |             [01;31m[Kcontinue[m[K;
+[16.386s]       |             [01;31m[K^~~~~~~~[m[K
+[16.387s] [01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:81:13:[m[K [01;31m[Kerror: [m[Kcontinue statement not within a loop
+[16.387s]    81 |             [01;31m[Kcontinue[m[K;
+[16.387s]       |             [01;31m[K^~~~~~~~[m[K
+[16.387s] [01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:89:13:[m[K [01;31m[Kerror: [m[Kcontinue statement not within a loop
+[16.387s]    89 |             [01;31m[Kcontinue[m[K;
+[16.387s]       |             [01;31m[K^~~~~~~~[m[K
+[23.472s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[23.472s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[23.473s] gmake: *** [Makefile:146: all] Error 2
+[23.481s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8

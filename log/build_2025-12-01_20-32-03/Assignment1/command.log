@@ -1,0 +1,2 @@
+Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8

@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid TurtlesimUI::[01;32m[Kmove_turtle[m[K(int, int, float)[m[K’:
+[01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:101:40:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Kconst std::chrono::nanoseconds&[m[K’ {aka ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000000000> >&[m[K’} from expression of type ‘[01m[Kstd::chrono::duration<double>[m[K’
+  101 |         rclcpp::sleep_for(std::chrono::[01;31m[Kduration<double>(turn_time)[m[K);
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:233:36:[m[K [01;36m[Knote: [m[Kin passing argument 1 of ‘[01m[Kbool rclcpp::[01;32m[Ksleep_for[m[K(const std::chrono::nanoseconds&, Context::SharedPtr)[m[K’
+  233 |   [01;36m[Kconst std::chrono::nanoseconds & nanoseconds[m[K,
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node1.cpp:119:40:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Kconst std::chrono::nanoseconds&[m[K’ {aka ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000000000> >&[m[K’} from expression of type ‘[01m[Kstd::chrono::duration<double>[m[K’
+  119 |         rclcpp::sleep_for(std::chrono::[01;31m[Kduration<double>(turn_time)[m[K);
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:233:36:[m[K [01;36m[Knote: [m[Kin passing argument 1 of ‘[01m[Kbool rclcpp::[01;32m[Ksleep_for[m[K(const std::chrono::nanoseconds&, Context::SharedPtr)[m[K’
+  233 |   [01;36m[Kconst std::chrono::nanoseconds & nanoseconds[m[K,
+      |   [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

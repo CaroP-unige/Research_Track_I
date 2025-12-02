@@ -1,0 +1,8 @@
+WARNING: Package name "Assignment1" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid DistanceMonitor::[01;32m[Kcheck_distance[m[K()[m[K’:
+[01m[K/home/ubuntu/Desktop/Research_Track_I/src/Assignment1/src/node2.cpp:107:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kstop_msg[m[K’ was not declared in this scope
+  107 |         pub1_->publish([01;31m[Kstop_msg[m[K);
+      |                        [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

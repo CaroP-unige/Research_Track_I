@@ -1,0 +1,65 @@
+[0.048s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ubuntu/Desktop/Research_Track_I/src/Assignment1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/Research_Track_I/install/Assignment1
+[0.543s] -- The C compiler identification is GNU 13.3.0
+[0.827s] -- The CXX compiler identification is GNU 13.3.0
+[0.887s] -- Detecting C compiler ABI info
+[1.086s] -- Detecting C compiler ABI info - done
+[1.099s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.101s] -- Detecting C compile features
+[1.103s] -- Detecting C compile features - done
+[1.122s] -- Detecting CXX compiler ABI info
+[1.272s] -- Detecting CXX compiler ABI info - done
+[1.281s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.281s] -- Detecting CXX compile features
+[1.281s] -- Detecting CXX compile features - done
+[1.374s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.608s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.874s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[2.046s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[2.097s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[2.195s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.327s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.841s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.858s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[3.236s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[3.286s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[3.315s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.586s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[3.706s] -- Found turtlesim: 1.8.3 (/opt/ros/jazzy/share/turtlesim/cmake)
+[3.864s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[4.006s] WARNING: Package name "Assignment1" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[4.107s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.107s] -- Configured cppcheck include dirs: 
+[4.108s] -- Configured cppcheck exclude dirs and/or files: 
+[4.113s] -- Added test 'lint_cmake' to check CMake code style
+[4.119s] -- Added test 'uncrustify' to check C / C++ code style
+[4.119s] -- Configured uncrustify additional arguments: 
+[4.123s] -- Added test 'xmllint' to check XML markup files
+[4.131s] -- Configuring done (4.0s)
+[4.177s] -- Generating done (0.0s)
+[4.193s] -- Build files have been written to: /home/ubuntu/Desktop/Research_Track_I/build/Assignment1
+[4.209s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ubuntu/Desktop/Research_Track_I/src/Assignment1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/Research_Track_I/install/Assignment1
+[4.210s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+[4.289s] [ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[25.017s] [100%] [32m[1mLinking CXX executable node1[0m
+[25.530s] [100%] Built target node1
+[25.550s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ubuntu/Desktop/Research_Track_I/build/Assignment1 -- -j8 -l8
+[25.568s] Invoking command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/Desktop/Research_Track_I/build/Assignment1
+[25.579s] -- Install configuration: ""
+[25.580s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/lib/Assignment1/node1
+[25.584s] -- Set non-toolchain portion of runtime path of "/home/ubuntu/Desktop/Research_Track_I/install/Assignment1/lib/Assignment1/node1" to ""
+[25.586s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/package_run_dependencies/Assignment1
+[25.588s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/parent_prefix_path/Assignment1
+[25.590s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/ament_prefix_path.sh
+[25.591s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/ament_prefix_path.dsv
+[25.591s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/path.sh
+[25.592s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/environment/path.dsv
+[25.592s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.bash
+[25.592s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.sh
+[25.593s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.zsh
+[25.593s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/local_setup.dsv
+[25.594s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/package.dsv
+[25.595s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/ament_index/resource_index/packages/Assignment1
+[25.596s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/cmake/Assignment1Config.cmake
+[25.597s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/cmake/Assignment1Config-version.cmake
+[25.598s] -- Installing: /home/ubuntu/Desktop/Research_Track_I/install/Assignment1/share/Assignment1/package.xml
+[25.604s] Invoked command in '/home/ubuntu/Desktop/Research_Track_I/build/Assignment1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ubuntu/Desktop/Research_Track_I/build/Assignment1
