@@ -49,8 +49,8 @@ In both cases, after corrective action, the velocity is set to zero to stop the 
 
   - Real-time monitoring of turtle positions using `turtlesim/Pose` subscribers.
   - Corrective actions: 
-            - *Workspace boundaries:* Turtles are prevented from leaving the simulation window; corrective motion is applied.
-            - *Minimum distance:* If turtles get too close, they are separated using corrective velocities.
+            *Workspace boundaries:* Turtles are prevented from leaving the simulation window; corrective motion is applied; 
+            *Minimum distance:* If turtles get too close, they are separated using corrective velocities.
   - Distance between turtles is published on a dedicated topic (`/distance`) using `std_msgs/Float32`.
   - Motion corrections use `geometry_msgs/Twist` publishers for each turtle.
   - Timer-based loop ensures continuous monitoring without blocking the user input in `node1`.
