@@ -49,8 +49,8 @@ In both cases, after corrective action, the velocity is set to zero to stop the 
 
   - Real-time monitoring of turtle positions using `turtlesim/Pose` subscribers.
   - Corrective actions: 
-        - *Workspace boundaries:* Turtles are prevented from leaving the simulation window; corrective motion is applied.
-        - *Minimum distance:* If turtles get too close, they are separated using corrective velocities.
+            - *Workspace boundaries:* Turtles are prevented from leaving the simulation window; corrective motion is applied.
+            - *Minimum distance:* If turtles get too close, they are separated using corrective velocities.
   - Distance between turtles is published on a dedicated topic (`/distance`) using `std_msgs/Float32`.
   - Motion corrections use `geometry_msgs/Twist` publishers for each turtle.
   - Timer-based loop ensures continuous monitoring without blocking the user input in `node1`.
@@ -61,11 +61,11 @@ In both cases, after corrective action, the velocity is set to zero to stop the 
 - **Framework:** ROS2 (Robot Operating System 2)
 - **Additional tools:** Docker, GitHub
 - **Used packages:**
-- `turtlesim`: to simulate the turtles and the workspace.
-- `geometry_msgs/Twist`: to handle velocity messages.
-- `turtlesim/Pose`: provides turtle positions for monitoring and safety
-- `roscpp`: to implement ROS nodes in C++.
-- `std_msgs/Float32`: used to publish the distance between turtles.
+    - `turtlesim`: to simulate the turtles and the workspace.
+    - `geometry_msgs/Twist`: to handle velocity messages.
+    - `turtlesim/Pose`: provides turtle positions for monitoring and safety
+    - `roscpp`: to implement ROS nodes in C++.
+    - `std_msgs/Float32`: used to publish the distance between turtles.
 
 ## Installation
 
