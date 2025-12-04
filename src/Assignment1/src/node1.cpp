@@ -118,9 +118,9 @@ private:
     * Then sets a timer that, after 1 second, automatically sends a stop command.
     *
     * Parameters: 
-    *   'turtle_choice' = 1 for turtle1, 2 for turtle2.
-    *   'direction' = chosen direction (1-4).
-    *   'speed' = intensity of linear or angular speed.
+    *   'turtle_choice' = 1 for turtle1, 2 for turtle2
+    *   'direction' = chosen direction (1-4)
+    *   'speed' = intensity of linear or angular speed
     */
 
     void move_turtle(int turtle_choice, int direction, float speed) {
