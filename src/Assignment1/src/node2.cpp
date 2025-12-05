@@ -158,25 +158,47 @@ private:
         if (dist < distance_threshold_) {
             RCLCPP_WARN(this->get_logger(), "Turtles TOO CLOSE! Moving them apart...");
 
-            geometry_msgs::msg::Twist v1, v2;
+            // Normalized direction from turtle1 to turtle2
+            float nx = dx / dist;
+            float ny = dy / dist;
 
-            v1.linear.x = (pose1_.x > pose2_.x) ? 0.5 : -0.5;
-            v2.linear.x = (pose2_.x > pose1_.x) ? 0.5 : -0.5;
+            // Convert each turtle's velocity from body frame → world frame
+            float v1x = prec_vel1_.linear.x * std::cos(pose1_.theta);
+            float v1y = prec_vel1_.linear.x * std::sin(pose1_.theta);
 
-            // Publish corrective commands.
-            pub1_->publish(v1);
-            pub2_->publish(v2);
+            float v2x = prec_vel2_.linear.x * std::cos(pose2_.theta);
+            float v2y = prec_vel2_.linear.x * std::sin(pose2_.theta);
 
-            rclcpp::sleep_for(500ms); // Waits 0.5 seconds to allow the correction
+            // Dot products: tells if they are approaching each other
+            // dot1 < 0 → turtle1 is moving toward turtle2
+            // dot2 < 0 → turtle2 is moving toward turtle1
+            float dot1 = v1x * nx + v1y * ny;
+            float dot2 = v2x * (-nx) + v2y * (-ny);
 
-            // Stop both turtles after the corrective movement.
-            v1.linear.x = 0;
-            v2.linear.x = 0;
+            // Prepare stop message
+            geometry_msgs::msg::Twist stop;
+            stop.linear.x = 0;
 
-            pub1_->publish(v1);
-            pub2_->publish(v2);
+            // Turtles rebound ONLY if they are approaching
+            if (dot1 < 0) {
+                geometry_msgs::msg::Twist invert = prec_vel1_;
+                invert.linear.x = -prec_vel1_.linear.x;
 
-            RCLCPP_WARN(this->get_logger(), "Corrective action completed.");
+                RCLCPP_WARN(this->get_logger(), " → Turtle1 is approaching! Reversing it.");
+                pub1_->publish(invert);
+                rclcpp::sleep_for(300ms);
+                pub1_->publish(stop);
+            }
+
+            else if (dot2 < 0) {
+                geometry_msgs::msg::Twist invert = prec_vel2_;
+                invert.linear.x = -prec_vel2_.linear.x;
+
+                RCLCPP_WARN(this->get_logger(), " → Turtle2 is approaching! Reversing it.");
+                pub2_->publish(invert);
+                rclcpp::sleep_for(300ms);
+                pub2_->publish(stop);
+            }
         }
     }
 };
