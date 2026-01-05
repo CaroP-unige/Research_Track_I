@@ -1,0 +1,2 @@
+float64 min_distance
+string direction
