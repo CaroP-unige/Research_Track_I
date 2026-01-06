@@ -46,6 +46,7 @@ ament_target_dependencies(node2
   sensor_msgs
 )
 
+# Link generated interfaces
 target_link_libraries(node2 ${cpp_typesupport_target})
 
 # -----------------------------------------
