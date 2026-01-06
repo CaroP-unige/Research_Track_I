@@ -71,17 +71,12 @@ In both cases, after corrective action, the velocity is set to zero to stop the 
 
 Follow these steps to set up the project:
 
-1. Clone the repository:
-
-	- `git clone https://github.com/CaroP-unige/Research_Track_I.git`
-	- `cd Assignment1`
-
-2. Build the project: 
+1. Build the project: 
 
     - `colcon build`
     - `source install/setup.bash`
 
-3. Launch processes in separate terminals:
+2. Launch processes in separate terminals:
 
 	- **Terminal 1**: Launch the turtlesim simulator: `ros2 run turtlesim turtlesim_node`
     - **Terminal 2**: Spawn the second turtle (using the dedicated Python script not included in the package): `python3 turtle_spawn.py`
