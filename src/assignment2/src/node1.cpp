@@ -8,7 +8,7 @@
 #include "assignment2/srv/get_vel_avg.hpp"
 
 /**
- * User interface node for manual robot teleoperation.
+ * User interface node for manual robot teleoperation
  *
  * This node provides a simple terminal-based interface that allows the user
  * to send velocity commands to the robot and interact with the services
