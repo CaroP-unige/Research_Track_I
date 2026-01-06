@@ -89,7 +89,7 @@ private:
                 case 'l': set_linear_speed(); break;
                 case 'r': set_angular_speed(); break;
                 default:
-                    std::cout << "Invalid command.\n";
+                    std::cout << "Invalid command\n";
                     break;
             }
         }
@@ -121,7 +121,7 @@ private:
         if (std::cin.fail() || value <= 0) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid speed. Must be a positive number.\n";
+            std::cout << "Invalid speed. Must be a positive number\n";
             return;
         }
 
@@ -138,7 +138,7 @@ private:
         if (std::cin.fail() || value <= 0) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid speed. Must be a positive number.\n";
+            std::cout << "Invalid speed. Must be a positive number\n";
             return;
         }
 
@@ -149,7 +149,7 @@ private:
     // Sends a request to update the safety threshold
     void call_set_threshold() {
         if (!client_set_threshold_->wait_for_service(std::chrono::seconds(1))) {
-            std::cout << "Service set_threshold not available.\n";
+            std::cout << "Service set_threshold not available\n";
             return;
         }
 
@@ -160,7 +160,7 @@ private:
         if (std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid threshold.\n";
+            std::cout << "Invalid threshold\n";
             return;
         }
 
@@ -169,13 +169,13 @@ private:
 
         client_set_threshold_->async_send_request(req);
 
-        std::cout << "Threshold update request sent.\n";
+        std::cout << "Threshold update request sent\n";
     }
 
     // Calls the service that returns the average of the last 5 velocity commands
     void call_get_avg() {
         if (!client_get_avg_->wait_for_service(std::chrono::seconds(1))) {
-            std::cout << "Service get_vel_avg not available.\n";
+            std::cout << "Service get_vel_avg not available\n";
             return;
         }
 
@@ -192,7 +192,7 @@ private:
             std::cout << "Average linear velocity: " << res->avg_linear << "\n";
             std::cout << "Average angular velocity: " << res->avg_angular << "\n";
         } else {
-            std::cout << "Failed to call get_vel_avg service.\n";
+            std::cout << "Failed to call get_vel_avg service\n";
         }
     }
 };

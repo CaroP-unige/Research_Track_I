@@ -64,7 +64,7 @@ public:
                       std::placeholders::_1, std::placeholders::_2)
         );
 
-        RCLCPP_INFO(this->get_logger(), "SafetyNode (Step 3 completo) avviato");
+        RCLCPP_INFO(this->get_logger(), "--- SafetyNode ---");
     }
 
 private:
@@ -192,9 +192,9 @@ private:
             rollback_active_ = true;
 
             if (going_forward)
-                RCLCPP_WARN(this->get_logger(), "Rollback attivato (stavi andando AVANTI)");
+                RCLCPP_WARN(this->get_logger(), "Rollback triggered (you were moving FORWARD)");
             else if (going_backward)
-                RCLCPP_WARN(this->get_logger(), "Rollback attivato (stavi andando INDIETRO)");
+                RCLCPP_WARN(this->get_logger(), "Rollback triggered (you were moving BACKWARD)");
         }
 
         // Rollback behavior
@@ -223,7 +223,7 @@ private:
                 cmd_pub_->publish(stop_cmd);
                 last_raw_cmd_ = stop_cmd;
 
-                RCLCPP_INFO(this->get_logger(), "Rollback completato. Robot fermato.");
+                RCLCPP_INFO(this->get_logger(), "Rollback completed. Robot stopped");
             }
 
             return;
@@ -238,6 +238,7 @@ private:
         assignment2::msg::ObstacleInfo msg;
         msg.min_distance = min_distance_;
         msg.direction = direction_;
+        msg.threshold = threshold_;
         obstacle_pub_->publish(msg);
     }
 
@@ -248,10 +249,10 @@ private:
     {
         threshold_ = req->threshold;
         res->success = true;
-        res->message = "Nuova soglia impostata correttamente";
+        res->message = "New threshold set successfully";
 
         RCLCPP_INFO(this->get_logger(),
-            "Nuova soglia di sicurezza: %.2f", threshold_);
+            "New safety threshold: %.2f", threshold_);
     }
 
     // Service callback to compute the average of the last 5 velocity commands
