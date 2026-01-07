@@ -65,7 +65,8 @@ After rollback is completed, the robot is automatically stopped.
 
   - Real-time processing of LaserScan data.
   - Division of scan into left, front, and right sectors.
-  - Publishes obstacle information `/obstacle_info` using a custom message.
+  - Publishes obstacle information `/obstacle_info` using a custom message `ObstacleInfo.msg`:
+    - Obstacle information can be inspected at any time via terminal: `ros2 topic echo /obstacle_info`
   - Enforces safety threshold with rollback behavior.
   - Publishes filtered velocity commands `/cmd_vel`.
   - Maintains a queue of the last 5 velocity commands.
@@ -127,6 +128,7 @@ The following diagram illustrates the overall architecture of the system, showin
                            | Publishes: /cmd_vel_raw     |
                            | Calls: /set_threshold (srv) |
                            | Calls: /get_vel_avg (srv)   |
+                           | Subscribes: /obstacle_info  |
                            +--------------+--------------+
                                           |
                                           | raw velocity commands
@@ -151,7 +153,7 @@ The following diagram illustrates the overall architecture of the system, showin
                                  |  real hardware)  |
                                  +------------------+
 
-- `user_interface_node`: Sends raw velocity commands and interacts with the safety node through two custom services.
+- `user_interface_node`: Sends raw velocity commands and interacts with the safety node through two custom services, and subscribes to the `/obstacle_info` topic to receive real‑time obstacle information.
 - `safety_node`: Processes LaserScan data, enforces safety constraints, and publishes safe velocity commands.
   It also publishes obstacle information and provides two services for configuration and monitoring.
 - Robot: Receives the final, safety-filtered velocity commands.
